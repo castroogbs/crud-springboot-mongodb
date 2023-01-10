@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -53,6 +53,7 @@ public class Student {
         this.favouriteSubjects = favouriteSubjects;
         this.totalSpentInBooks = totalSpentInBooks;
         this.createdAt = createdAt;
+
     }
 
     

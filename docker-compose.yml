@@ -1,7 +1,14 @@
 version: "3.9"
 
 services:
-  mongodb:
+  app:
+    build: .
+    container_name: spring-api
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+  database:
     image: mongo
     container_name: spring-mongodb
     ports:
@@ -11,17 +18,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rootuser
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
-  mongo-express: # graphic interface client for mongodb
-    image: mongo-express
-    container_name: spring-mongo-express
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-
+      
 volumes:
   data: {}
 

@@ -12,6 +12,11 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
+import com.example.demo.Model.Address;
+import com.example.demo.Model.Gender;
+import com.example.demo.Model.Student;
+import com.example.demo.Repositories.StudentRepository;
+
 @SpringBootApplication
 public class DemoApplication {
 
